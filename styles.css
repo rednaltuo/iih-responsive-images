@@ -1,0 +1,107 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.page {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.section {
+    width: 100%;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu {
+    background-color: #5995da;
+    height: 80px;
+}
+
+.header {
+    background-color: #B2D6FF;
+}
+
+.content {
+    background-color: #eaedf0;
+    height: 600px;
+}
+
+.sign-up {
+    background-color: #d6e9fe;
+}
+
+.feature-1 {
+    background-color: #F5CF8E;
+}
+
+.feature-2 {
+    background-color: #F09A9D;
+}
+
+.feature-3 {
+    background-color: #c8c6fa;
+}
+
+/* SVGs let us forget about screen resolution issues, but we do need to shrink the illustration to fit neatly  
+    into our fluid tablet and mobile layouts. Firefox will do this automatically, but if you open this page    
+    with Chrome and make your browser very narrow, you’ll find that the image stays the same size.
+
+    To get a fluid image in Chrome, we need to tell the illustration to always fill the width of its container. */
+
+.illustration {
+    width: 100%;
+}
+
+/* When we specify 100% width on an image, it’ll assume we want to maintain its aspect ratio and calculate 
+    its height automatically. This fixes the mobile layout, but now the desktop version is huge. */
+
+    /* We want to cap the width of the illustration to its inherent width, which is 500 pixels. 
+    We can do this with an inline style. */
+
+/* This is one of the rare times an inline style is acceptable, due to the fact that it’s describing an innate 
+    property of the image. An image’s physical dimensions are more content than presentation, so it makes sense 
+    for this to appear in the HTML rather than the stylesheet. */
+
+
+/* Tablet Styles */
+@media only screen and (min-width: 401px) and (max-width: 960px) {
+
+    .sign-up,
+    .feature-1,
+    .feature-2,
+    .feature-3 {
+        width: 50%;
+    }
+}
+
+/* Desktop Styles */
+@media only screen and (min-width: 961px) {
+    .page {
+        width: 960px;
+        margin: 0 auto;
+    }
+
+    .feature-1,
+    .feature-2,
+    .feature-3 {
+        width: 33.3%;
+    }
+
+    .header {
+        height: 400px;
+    }
+
+    .sign-up {
+        height: 200px;
+        order: 1;
+    }
+
+    .content {
+        order: 2;
+    }
+}
