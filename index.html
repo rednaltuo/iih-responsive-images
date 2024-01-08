@@ -16,11 +16,14 @@
             <img src="images/header.svg">
         </div>
         <div class='section content'>
-            <!-- Without this extra .illustration container, the image would get distorted because 
-            flexbox would try to set its height to be the same as the .content container. 
-            This requires a little tweak to the .illustration CSS rule, too. -->
             <div class='illustration'>
-                <img src='images/illustration-big.png' style='max-width: 500px' />
+            <!-- The 1x tells the browser to display illustration-small.png on standard-resolution screens. 
+                The 2x means that illustration-big.png is for retina screens. 
+                Older browsers that don't understand srcset fall back to the src attribute. -->
+                <img src='illustration-small.png'
+                     srcset='images/illustration-small.png 1x,
+                             images/illustration-big.png 2x'
+                     style='max-width: 500px'/>
             </div>
         </div>
         <div class="section sign-up">
