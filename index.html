@@ -4,8 +4,7 @@
 <head>
     <meta charset='UTF-8' />
     <!-- Disable the default viewport zoom behavior of mobile browsers. -->
-    <meta name='viewport'
-      content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
     <title>Responsive Design</title>
     <link rel='stylesheet' href='styles.css' />
 </head>
@@ -16,8 +15,13 @@
         <div class="section header">
             <img src="images/header.svg">
         </div>
-        <div class="section content">
-            <img class='illustration' src='images/illustration.svg' style='max-width: 500px'/>    
+        <div class='section content'>
+            <!-- Without this extra .illustration container, the image would get distorted because 
+            flexbox would try to set its height to be the same as the .content container. 
+            This requires a little tweak to the .illustration CSS rule, too. -->
+            <div class='illustration'>
+                <img src='images/illustration-big.png' style='max-width: 500px' />
+            </div>
         </div>
         <div class="section sign-up">
             <img src="images/sign-up.svg">

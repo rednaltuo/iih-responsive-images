@@ -47,26 +47,10 @@
     background-color: #c8c6fa;
 }
 
-/* SVGs let us forget about screen resolution issues, but we do need to shrink the illustration to fit neatly  
-    into our fluid tablet and mobile layouts. Firefox will do this automatically, but if you open this page    
-    with Chrome and make your browser very narrow, you’ll find that the image stays the same size.
-
-    To get a fluid image in Chrome, we need to tell the illustration to always fill the width of its container. */
-
-.illustration {
+.illustration img {
     width: 100%;
+    display: block;
 }
-
-/* When we specify 100% width on an image, it’ll assume we want to maintain its aspect ratio and calculate 
-    its height automatically. This fixes the mobile layout, but now the desktop version is huge. */
-
-    /* We want to cap the width of the illustration to its inherent width, which is 500 pixels. 
-    We can do this with an inline style. */
-
-/* This is one of the rare times an inline style is acceptable, due to the fact that it’s describing an innate 
-    property of the image. An image’s physical dimensions are more content than presentation, so it makes sense 
-    for this to appear in the HTML rather than the stylesheet. */
-
 
 /* Tablet Styles */
 @media only screen and (min-width: 401px) and (max-width: 960px) {
