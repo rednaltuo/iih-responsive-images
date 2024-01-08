@@ -12,14 +12,27 @@
 <body>
     <div class="page">
         <div class="section menu"></div>
-        <div class="section header">
-            <img src="images/header.svg">
+        <div class='section header'>
+            <div class='photo'>
+            <!-- Instead of the 1x and 2x descriptors, we're providing the inherent physical width of the image.
+                The 2000w tells the browser that the photo-big.jpg file is 2000 pixels wide. 
+                Likewise, the 1000w means photo-small.jpg has a width of 1000 pixels.
+                'w' is a special unit used only for this kind of image optimization scenario. 
+                Image width alone isn't enough for a device to determine which image it should load,
+                we also need to tell it what the final rendered width of the image will be. 
+                For this purpose, the sizes attribute defines a series of media queries along with the 
+                image's rendered width when that media query is in effect. -->
+                <img src='images/photo-small.jpg'
+                     srcset='images/photo-big.jpg 2000w,
+                             images/photo-small.jpg 1000w'
+                     sizes='(min-width: 960px) 960px,
+                            100vw'/>
+            <!-- Here, we're saying that when the screen is at least 960px wide, the image will also be 960 pixels wide. 
+                Otherwise, the 100vw default value tells the browser that the image's width will be 100% of the “viewport width”. -->
+            </div>
         </div>
         <div class='section content'>
             <div class='illustration'>
-            <!-- The 1x tells the browser to display illustration-small.png on standard-resolution screens. 
-                The 2x means that illustration-big.png is for retina screens. 
-                Older browsers that don't understand srcset fall back to the src attribute. -->
                 <img src='illustration-small.png'
                      srcset='images/illustration-small.png 1x,
                              images/illustration-big.png 2x'
